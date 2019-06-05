@@ -1,0 +1,641 @@
+/* ###########################################################*/
+/* Basic Setup For all pages #################################*/
+/* ###########################################################*/
+body {
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:url('../video/Modem-lights.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+header {
+    color:rgb(194,227,239);
+    display: flex;
+    border-bottom: 1px solid white;
+    background-color: rgba(84,99,104,0.9);
+    justify-content: space-around;
+    align-items: center;
+    
+}
+header h1 {
+    display: none;
+}
+
+.logo {
+    padding: 1em;
+    width: 3em;
+    height: 3em;
+}
+.logo>img{
+    max-width: 100%;
+    max-height:100%; 
+}
+
+nav {
+    width: 80%;
+}
+nav>ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+}
+
+nav>ul>li {
+    list-style: none;
+    margin: 10px;
+}
+nav>ul>li>a {
+    text-decoration: none;
+    color: rgb(194,227,239);
+    padding: 1em;
+}
+nav>ul>li>a:hover{
+    color:white;
+    transition: 300ms;
+    text-decoration: underline;
+
+}
+#myVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    filter: blur(1px);
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition-duration: 0.6s;
+}
+/* ###########################################################*/
+/* index page style ##########################################*/
+/* ###########################################################*/
+.homemain {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.media {
+    display: flex;
+    background-color: rgba(45,45,45, 0.8);
+    border: 0.5px solid white;
+    box-shadow: 1px 1px 1px 1px rgba(63, 70, 73, 0.7);
+    border-radius: 4px;
+    width: 16em;
+    height: 16em;
+    text-decoration: none;
+    color: rgb(194, 194, 194);
+    margin: 1em;
+    justify-content: center;
+    align-items: center;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+    
+    
+}
+.media:hover {
+    background-color: rgba(102,114,103,0.8);
+    color: white;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px 3px rgba(25, 29, 31, 0.8);
+    text-shadow: 1px black;
+    transition: 350ms;
+}
+.media>section{
+    max-width: 50%;
+}
+footer {
+    display: flex;
+    background-color:  rgb(84,99,104);
+    flex-direction: column;
+    border:0.5px white;
+    width: 100%;
+}
+footer a {
+    color: white;
+    margin: 1em;
+}
+.img-size-setup {
+    width: 100%;
+    
+}
+/* ###########################################################*/
+/* Music page  ###############################################*/
+/* ###########################################################*/
+.music {
+    color: white;
+    display: none; 
+    position: fixed;
+    flex:1;
+    top:0; 
+    z-index: 1;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9);
+    animation-name: zoom;
+    animation-duration: 0.8s;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding:2em;
+}
+
+.music>img {
+    max-width: 20em;
+    max-height: 20em;
+    border: 2px solid white;
+}
+.music aside {
+    width: 30em;
+}
+.music h2 {
+    display: none;
+}
+
+.music-img {
+    cursor: pointer;
+    border: 1px solid black;
+    width: 17em;
+    height: 17em;
+    border-radius: 0.4em;
+    margin: 1em;
+    transition-duration: 500ms;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+    
+}
+.music-img:hover {
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
+    border: 1px solid white;
+}
+
+
+
+/* ###########################################################*/
+/* movie page  ###############################################*/
+/* ###########################################################*/
+.movie {
+    color: white;
+    display: none; 
+    position: fixed;
+    flex:1;
+    top:0; 
+    z-index: 1;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9);
+    animation-name: zoom;
+    animation-duration: 0.8s;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding:2em;
+    
+    
+}
+.movie aside {
+    width: 30em;
+    padding: 1em;
+}
+.movie h2 {
+    display: none;
+}
+
+.movie>img {
+    max-width: 20em;
+    max-height: 28em;
+    border: 2px solid white;
+}
+
+.movie-img {
+    cursor: pointer;
+    border: 1px solid black;
+    width: 17em;
+    height: 25em;
+    border-radius: 5px;
+    margin: 1em;
+    transition-duration: 500ms;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+    
+}
+
+.movie-img:hover {
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
+    border: 1px solid white;
+}
+
+/* ###########################################################*/
+/* book page  ###############################################*/
+/* ###########################################################*/
+.book {
+    color: white;
+    display: none; 
+    position: fixed;
+    flex:1;
+    top:0; 
+    z-index: 1;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9);
+    animation-name: zoom;
+    animation-duration: 0.8s;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding:2em;
+    
+    
+}
+.book aside {
+    width: 30em;
+    padding: 1em;
+}
+.book h2 {
+    display: none;
+}
+
+.book>img {
+    max-width: 20em;
+    max-height: 28em;
+    border: 2px solid white;
+}
+
+.book-img {
+    cursor: pointer;
+    border: 1px solid black;
+    width: 17em;
+    height: 25em;
+    border-radius: 5px;
+    margin: 1em;
+    transition-duration: 500ms;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+    
+}
+
+.book-img:hover {
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
+    border: 1px solid white;
+}
+
+/* ###########################################################*/
+/* magazine page  ###############################################*/
+/* ###########################################################*/
+.magazine {
+    color: white;
+    display: none; 
+    position: fixed;
+    flex:1;
+    top:0; 
+    z-index: 1;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9);
+    animation-name: zoom;
+    animation-duration: 0.8s;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding:2em;
+    
+    
+}
+.magazine aside {
+    width: 30em;
+    padding: 1em;
+}
+.magazine h2 {
+    display: none;
+}
+
+.magazine>img {
+    max-width: 20em;
+    max-height: 28em;
+    border: 2px solid white;
+}
+
+.magazine-img {
+    cursor: pointer;
+    border: 1px solid black;
+    width: 17em;
+    height: 25em;
+    border-radius: 5px;
+    margin: 1em;
+    transition-duration: 500ms;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+    
+}
+
+.magazine-img:hover {
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
+    border: 1px solid white;
+}
+
+/* ###########################################################*/
+/* Close function style  #####################################*/
+/* ###########################################################*/
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right:1em;
+    padding-top: 0.5em;
+    color: #f1f1f1;
+    font-size: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.buyitnow {
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2em;
+}
+.buyitnow a {
+    padding: 0.5em;
+    color: white;
+    background-color: teal;
+    border-radius: 0.3em;
+}
+
+
+/* ###########################################################*/
+/* Signup function style  #####################################*/
+/* ###########################################################*/
+.register {
+    justify-content: center;
+
+}
+.register form {
+    border-radius:0.4em;
+    background-color: rgba(45,45,45, 0.9);
+    width: 35em;
+    padding: 1em;
+    color: white;
+    height: 45em;
+    margin-top:2em;
+    margin-bottom: 2em;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+
+}
+.register form h1 {
+    text-align: center;
+}
+.register form input {
+    border: none;
+    border-radius: 0.3em;
+    display: block;
+    width: 80%;
+    padding:0.5em;
+    outline: none;
+    margin: auto;
+    margin-bottom: 0.5em;
+
+}
+.register form input:hover {
+    background-color: rgba(102,114,103,0.8);
+}
+.register form label {
+    font-style: italic;
+    width:80%;
+    display: block;
+    margin: auto;
+}
+.register form select {
+    border-radius: 0.3em;
+    display: block;
+    margin: auto;
+    padding: 0.5em;
+    width: 83%;
+
+}
+.register form span {
+    color: red;
+}
+.register form p {
+    text-align: center;
+    
+}
+.register form a {
+    color: white;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+ }
+ :-moz-placeholder {
+    font-style: italic;  
+ }
+ ::-moz-placeholder {
+    font-style: italic;  
+ }
+ :-ms-input-placeholder {  
+    font-style: italic; 
+ }
+
+
+
+/* ###########################################################*/
+/* Login style  ###############################################*/
+/* ###########################################################*/
+
+
+ .login {
+    justify-content: center;
+ }
+ .login form {
+    border-radius:0.4em;
+    background-color: rgba(45,45,45, 0.9);
+    width: 30em;
+    padding: 1em;
+    max-height: 20em;
+    color: white;
+    margin-top:2em;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+ }
+ .login form label {
+    font-style: italic;
+    width:80%;
+    display: block;
+    margin: auto;
+ }
+ .login form h1 {
+    text-align: center;
+}
+.login form input {
+    border: none;
+    border-radius: 0.3em;
+    display: block;
+    width: 80%;
+    padding:0.5em;
+    outline: none;
+    
+    margin: auto;
+    margin-bottom: 2em;
+
+    
+}
+.login form p {
+    text-align: center;
+}
+.login form a {
+    color: white;
+    margin: auto;
+    
+}
+ form input:hover {
+    background-color: rgba(102,114,103,0.8);
+}
+
+/* ###########################################################*/
+/* Employee page  ############################################*/
+/* ###########################################################*/
+.employee-page{
+    flex-direction: column;
+}
+.employee-page aside {
+    border: 0.3em solid white;
+    margin: auto;
+    max-width:60%;
+    border-radius: 2em;
+    background-color: rgba(102,114,103,0.8);
+    text-align: center;
+    margin-top:1em;
+    margin-bottom:1em;
+    padding: 1em;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+}
+.employee-page h2 {
+    text-align: center;
+    color: white;
+
+}
+.employee-page div {
+    overflow:auto;
+}
+.employee-page table {
+    margin: auto;
+    margin-top:1em;
+    margin-bottom:1em;
+    border-collapse: collapse;
+    background-color: rgba(83, 95, 93, 0.9);
+    color: white;
+    border: 1px dashed white;
+    border-collapse: collapse;
+    max-width:60em;
+    box-shadow: 2px 2px 2px 2px white;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+    
+}
+
+.employee-page form {
+    color: white;
+    margin:auto;
+    display: block;
+    text-align: center;
+    background-color: rgba(71, 70, 70, 0.8);
+    padding: 1em;
+    border: 0.2em solid white;
+    border-radius: 0.4em;
+
+}
+.employee-page form input {
+    outline: none;
+    padding: 0.5em;
+}
+.employee-page form select {
+    outline: none;
+    padding: 0.5em;
+}
+
+
+.user-page {
+    justify-content: center;
+}
+.user-page aside {
+    margin-top:1em;
+    margin-bottom:1em;
+    padding: 1em;
+    background-color: rgba(102,114,103,0.8);
+    border: 1px solid white;
+    border-radius: 1em;
+    height: 20em;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+
+}
+
+td a {
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: darkslategray;
+}
+
+td,
+th {
+    padding: 0.5em;
+    border: 1px solid white;
+}
+
+
+/* ###########################################################*/
+/* About page  ###############################################*/
+/* ###########################################################*/
+.about {
+    justify-content: center;
+}
+.about aside {
+    margin-top:2em;
+    margin-bottom:2em;
+    background-color: rgba(102,114,103,0.8);
+    max-width: 40em;
+    padding: 3em;
+    border-radius: 1em;
+    animation-name: zoom;
+    animation-duration: 0.9s;
+}
+.about img {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
